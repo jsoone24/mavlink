@@ -8115,5 +8115,56 @@
       <field type="int16_t" name="temperature" units="cdegC">Temperature</field>
       <field type="uint16_t" name="humidity" units="c%">Humidity</field>
     </message>
+    <message id="31015" name="PRIVILEGED_INFO">
+      <description> Previleged info for critic in asymmetric actor critic training. </description>
+      <field type="float[3]" name="ekf_gyro_bias" units="rad/s">EKF gyro bias x, y, z</field>
+      <field type="float[3]" name="ekf_gyro_bias_variance" units="rad/s^2">EKF gyro bias variance x, y, z</field>
+      <field type="float[3]" name="ekf_accel_bias" units="m/s^2">EKF accel bias x, y, z</field>
+      <field type="float[3]" name="ekf_accel_bias_variance" units="m/s^2">EKF accel bias variance x, y, z</field>
+      <field type="float[2]" name="gps_hpos_innov" units="m">GPS horizontal position innovation x, y</field>
+      <field type="float" name="gps_vpos_innov" units="m">GPS vertical position innovation</field>
+      <field type="float[2]" name="gps_hvel_innov" units="m/s">GPS horizontal velocity innovation x, y</field>
+      <field type="float" name="gps_vvel_innov" units="m/s">GPS vertical velocity innovation</field>
+      <field type="float" name="heading_innov" units="rad">Heading innovation</field>
+      <field type="float[2]" name="gps_hpos_innov_var" units="m^2">GPS horizontal position innovation variance x, y</field>
+      <field type="float" name="gps_vpos_innov_var" units="m^2">GPS vertical position innovation variance</field>
+      <field type="float[2]" name="gps_hvel_innov_var" units="m^2/s^2">GPS horizontal velocity innovation variance x, y</field>
+      <field type="float" name="gps_vvel_innov_var" units="m^2/s^2">GPS vertical velocity innovation variance</field>
+      <field type="float" name="heading_innov_var" units="rad^2">Heading innovation variance</field>
+      <field type="float" name="pos_test_ratio">Test Ratio for position</field>
+      <field type="float" name="vel_test_ratio">Test Ratio for velocity</field>
+      <field type="float" name="mag_test_ratio">Test Ratio for magnetometer</field>
+      <field type="float" name="pos_horiz_accuracy">Horizontal accuracy of position</field>
+      <field type="float" name="pos_vert_accuracy">Vertical accuracy of position</field>
+      <field type="float[3]" name="local_position_setpoint_p" units="m">Local position setpoint position(x, y, z)</field>
+      <field type="float[3]" name="local_position_setpoint_v" units="m/s">Local position setpoint velocity (vx, vy, vz)</field>
+      <field type="float[4]" name="attitude_setpoint_q">Attitude setpoint quaternion (w, x, y, z)</field>
+      <field type="float[3]" name="rates_setpoint" units="rad/s">Attitude rates setpoint (roll, pitch, yaw)</field>
+      <field type="float[3]" name="attitude_setpoint_thrust">Attitude setpoint thrust in body frame</field>
+    </message>
+    <message id="31016" name="GET_GYRO_BIAS">
+      <description> Gyro bias for critic in asymmetric actor critic training. </description>
+      <field type="float" name="gyro_bias_x" units="rad/s">Gyro bias x</field>
+      <field type="float" name="gyro_bias_y" units="rad/s">Gyro bias y</field>
+      <field type="float" name="gyro_bias_z" units="rad/s">Gyro bias z</field>
+    </message>
+    <message id="31017" name="SET_GYRO_BIAS">
+      <description> Set gyro bias for critic in asymmetric actor critic training. </description>
+      <field type="float" name="gyro_bias_x" units="rad/s">Gyro bias x</field>
+      <field type="float" name="gyro_bias_y" units="rad/s">Gyro bias y</field>
+      <field type="float" name="gyro_bias_z" units="rad/s">Gyro bias z</field>
+    </message>
+    <message id="31018" name="GET_ACCEL_BIAS">
+      <description> Accelerometer bias for critic in asymmetric actor critic training. </description>
+      <field type="float" name="accel_bias_x" units="m/s/s">Accelerometer bias x</field>
+      <field type="float" name="accel_bias_y" units="m/s/s">Accelerometer bias y</field>
+      <field type="float" name="accel_bias_z" units="m/s/s">Accelerometer bias z</field>
+    </message>
+    <message id="31019" name="SET_ACCEL_BIAS">
+      <description> Set accelerometer bias for critic in asymmetric actor critic training. </description>
+      <field type="float" name="accel_bias_x" units="m/s/s">Accelerometer bias x</field>
+      <field type="float" name="accel_bias_y" units="m/s/s">Accelerometer bias y</field>
+      <field type="float" name="accel_bias_z" units="m/s/s">Accelerometer bias z</field>
+    </message>
   </messages>
 </mavlink>
