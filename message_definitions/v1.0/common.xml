@@ -6640,6 +6640,29 @@
       <field type="float[4]" name="attitude_setpoint_q">Attitude setpoint quaternion (w, x, y, z)</field>
       <field type="float[3]" name="rates_setpoint" units="rad/s">Attitude rates setpoint (roll, pitch, yaw)</field>
       <field type="float[3]" name="attitude_setpoint_thrust">Attitude setpoint thrust in body frame</field>
+
+      <!-- === status/control === -->
+      <field type="uint8_t" name="nav_state">VehicleStatus.nav_state</field>
+      <field type="uint8_t" name="control_mode_auto_enabled">VehicleControlMode.flag_control_auto_enabled</field>
+      <field type="uint8_t" name="control_mode_offboard_enabled">VehicleControlMode.flag_control_offboard_enabled</field>
+      <field type="uint8_t" name="control_mode_posctl_enabled">VehicleControlMode.flag_control_position_enabled</field>
+      <field type="uint8_t" name="control_mode_velctl_enabled">VehicleControlMode.flag_control_velocity_enabled</field>
+      <field type="uint8_t" name="control_mode_altctl_enabled">VehicleControlMode.flag_control_altitude_enabled</field>
+
+      <!-- === PositionSetpointTriplet.current === -->
+      <field type="float" name="pos_sp_lat" units="deg">Current setpoint latitude</field>
+      <field type="float" name="pos_sp_lon" units="deg">Current setpoint longitude</field>
+      <field type="float" name="pos_sp_alt" units="m">Current setpoint altitude AMSL</field>
+      <field type="float" name="pos_sp_yaw" units="rad">Setpoint yaw</field>
+      <field type="float" name="pos_sp_acceptance_radius" units="m">Horizontal acceptance radius</field>
+      <field type="float" name="pos_sp_loiter_radius" units="m">Loiter radius</field>
+      <field type="uint8_t" name="pos_sp_loiter_ccw">Loiter counter-clockwise</field>
+      <field type="uint8_t" name="pos_sp_type">PositionSetpoint.type</field>
+
+      <!-- === FailsafeFlags === -->
+      <field type="uint8_t" name="ff_offboard_lost">Offboard signal lost</field>
+      <field type="uint8_t" name="ff_geofence_breached">Geofence breached</field>
+      <field type="uint8_t" name="ff_local_position_accuracy_low">Position accuracy low</field>
     </message>
     <message id="31016" name="GET_GYRO_BIAS">
       <description> Gyro bias for critic in asymmetric actor critic training. </description>
